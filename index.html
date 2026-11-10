@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Caroline Bidault — Développement logiciel, applications métier, données et systèmes d'information.">
+<title>Caroline Bidault — Software & Data Systems</title>
+<style>
+:root{--ink:#142b38;--muted:#657984;--teal:#078f91;--mint:#80d8ca;--pale:#eef5f6;--line:#dce7e9;--white:#fff;--navy:#102f3d;--gold:#e8b86b;--shadow:0 18px 50px rgba(19,52,65,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:#f7fafb;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1160px,calc(100% - 44px));margin:auto}.topbar{position:sticky;top:0;z-index:20;background:rgba(248,251,252,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(220,231,233,.8)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.03em}.monogram{width:36px;height:36px;border-radius:11px;background:var(--teal);color:white;display:grid;place-items:center;font-size:14.5px;box-shadow:0 7px 18px #078f9140}.brand small{display:block;font-size:12.5px;color:var(--muted);font-weight:600;letter-spacing:.04em}.navlinks{display:flex;gap:25px;align-items:center;font-size:14.5px;color:#506671}.navlinks a{transition:color .2s}.navlinks a:hover{color:var(--teal)}.nav-cta{padding:10px 17px;border:1px solid var(--line);border-radius:9px;background:white;font-weight:700;color:var(--ink)}.menu{display:none;border:0;background:transparent;font-size:24px;color:var(--ink)}
+.hero{position:relative;overflow:hidden;padding:92px 0 78px;background:linear-gradient(120deg,#f7fafb 0%,#edf6f6 58%,#f7fafb 100%)}.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none}.hero:before{width:500px;height:500px;right:-150px;top:-210px;background:radial-gradient(circle,#8eddd055,transparent 68%);animation:float 11s ease-in-out infinite}.hero:after{width:350px;height:350px;left:-180px;bottom:-230px;background:radial-gradient(circle,#0b8f9120,transparent 70%)}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}.eyebrow{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:800;display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:25px;height:2px;background:var(--teal)}h1{font-size:clamp(42px,5.2vw,66px);line-height:1.06;letter-spacing:-.055em;margin:21px 0 22px;max-width:680px}h1 span{color:var(--teal)}.lead{font-size:16px;color:#60737d;max-width:570px;line-height:1.85}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}.btn{border:0;border-radius:9px;padding:13px 19px;font-size:14.5px;font-weight:750;display:inline-flex;align-items:center;gap:9px;cursor:pointer;transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-3px)}.primary{background:var(--teal);color:white;box-shadow:0 9px 20px #078f9130;border-radius: 9px;padding:10px}.secondary{background:white;border:1px solid var(--line);color:var(--ink)}.metrics{display:flex;gap:31px;margin-top:42px;padding-top:24px;border-top:1px solid var(--line)}.metric strong{display:block;font-size:25px;letter-spacing:-.04em}.metric span{font-size:13.5px;color:var(--muted)}
+.hero-visual{position:relative;min-height:380px;display:grid;place-items:center}.orbit{position:absolute;width:330px;height:330px;border:1px solid #a9d6d2;border-radius:50%;animation:spin 42s linear infinite}.orbit:before,.orbit:after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 7px #078f9118}.orbit:before{top:35px;left:45px}.orbit:after{right:7px;bottom:90px;background:var(--gold)}.visual-card{position:relative;width:min(100%,370px);padding:26px;border:1px solid #dbe8e8;background:#ffffffd9;backdrop-filter:blur(12px);border-radius:19px;box-shadow:var(--shadow);transform:rotate(-2deg);animation:cardFloat 6s ease-in-out infinite}.visual-head{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;letter-spacing:.12em;font-weight:800;color:var(--muted)}.live-dot{width:7px;height:7px;border-radius:50%;background:#26b88b;display:inline-block;margin-right:6px;box-shadow:0 0 0 4px #26b88b20}.visual-title{font-size:22px;font-weight:800;letter-spacing:-.04em;margin:25px 0 7px}.visual-sub{font-size:14px;color:var(--muted)}.mini-flow{display:grid;grid-template-columns:1fr 26px 1fr;align-items:center;gap:5px;margin:25px 0}.flow-node{border:1px solid var(--line);border-radius:10px;padding:13px 8px;text-align:center;background:#f8fbfb}.flow-node b{display:block;font-size:13.5px}.flow-node small{font-size:12px;color:var(--muted)}.flow-arrow{text-align:center;color:var(--teal)}.signal{height:66px;display:flex;align-items:end;gap:7px;padding:0 5px}.signal i{display:block;flex:1;border-radius:5px 5px 2px 2px;background:linear-gradient(180deg,#56c7b5,#d5f0eb);animation:bars 2.4s ease-in-out infinite alternate}.signal i:nth-child(1){height:25%}.signal i:nth-child(2){height:48%;animation-delay:.2s}.signal i:nth-child(3){height:36%;animation-delay:.4s}.signal i:nth-child(4){height:78%;animation-delay:.1s}.signal i:nth-child(5){height:55%;animation-delay:.5s}.signal i:nth-child(6){height:92%;animation-delay:.3s}.signal i:nth-child(7){height:66%;animation-delay:.6s}.signal i:nth-child(8){height:82%;animation-delay:.25s}.floating-tag{position:absolute;right:-8px;bottom:25px;background:var(--navy);color:#d8f7f0;padding:11px 15px;border-radius:10px;font-size:12.5px;box-shadow:var(--shadow);animation:tagFloat 4s ease-in-out infinite}.floating-tag b{color:#80d8ca}
+section{padding:82px 0}.section-head{max-width:650px;margin-bottom:34px}.kicker{color:var(--teal);font-size:12.5px;letter-spacing:.18em;font-weight:800;text-transform:uppercase}.section-head h2{font-size:clamp(28px,3.3vw,39px);letter-spacing:-.045em;line-height:1.15;margin:10px 0}.section-head p{color:var(--muted);font-size:14px;margin:0}.expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.skill{padding:24px;background:white;border:1px solid var(--line);border-radius:14px;transition:transform .25s,box-shadow .25s}.skill:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.skill-icon{width:38px;height:38px;border-radius:11px;background:#e7f6f3;color:var(--teal);display:grid;place-items:center;font-size:18px}.skill h3{font-size:15px;margin:17px 0 7px;letter-spacing:-.02em}.skill p{font-size:14px;color:var(--muted);margin:0 0 16px}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font-size:12px;color:#54717a;background:#f0f6f6;border:1px solid #e2ecec;padding:4px 8px;border-radius:5px}
+.realizations{background:#edf4f5}.real-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.real-card{background:white;border:1px solid var(--line);border-radius:15px;overflow:hidden;display:grid;grid-template-columns:135px 1fr;min-height:195px}.real-art{background:linear-gradient(145deg,#123b48,#1a6570);color:#b8eee5;display:flex;flex-direction:column;justify-content:space-between;padding:17px;overflow:hidden;position:relative}.real-art:after{content:"";position:absolute;width:130px;height:130px;border:1px solid #8ce1d466;border-radius:50%;right:-50px;bottom:-40px;box-shadow:0 0 0 18px #8ce1d414,0 0 0 36px #8ce1d40c}.art-label{font-size:12px;letter-spacing:.14em;position:relative;z-index:1}.art-number{font-size:29px;font-weight:800;letter-spacing:-.06em;position:relative;z-index:1}.art-caption{font-size:12px;position:relative;z-index:1}.real-copy{padding:21px}.real-copy .kicker{font-size:12px}.real-copy h3{font-size:15px;margin:5px 0 7px}.real-copy p{font-size:13.5px;color:var(--muted);margin:0 0 12px}.real-copy .tags{gap:5px}.real-copy .tag{font-size:12px}.demo-wrap{background:white;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.demo-top{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px}.demo-top b{font-size:14.5px}.demo-top small{display:block;color:var(--muted);font-size:12.5px}.demo-controls{display:flex;gap:8px}.demo-controls input,.demo-controls select{border:1px solid var(--line);border-radius:7px;padding:9px 11px;font:inherit;font-size:13.5px;color:var(--ink);background:white;max-width:190px}.demo-table{width:100%;border-collapse:collapse;font-size:13.5px}.demo-table th{text-align:left;background:#f6f9fa;color:#71848c;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:12px 18px}.demo-table td{padding:13px 18px;border-top:1px solid #edf1f2}.status{font-size:12px;padding:4px 8px;border-radius:20px;display:inline-block;background:#e8f7f0;color:#16865d}.status.warn{background:#fff4df;color:#a36b12}.status.urgent{background:#fff0ed;color:#bd5945}.demo-foot{padding:12px 18px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line)}
+.timeline{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.job{background:white;border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:6px}.job h3{font-size:14.5px;margin:0}.job time{font-size:12.5px;color:var(--teal);font-weight:700}.job p{grid-column:1/-1;margin:0;color:var(--muted);font-size:13.5px}.contact{padding:0 0 80px}.contact-panel{background:var(--navy);color:white;border-radius:17px;padding:36px 42px;display:flex;justify-content:space-between;align-items:center;gap:24px;position:relative;overflow:hidden}.contact-panel:after{content:"";position:absolute;width:270px;height:270px;border:1px solid #80d8ca35;border-radius:50%;right:20%;top:-180px;box-shadow:0 0 0 30px #80d8ca0a,0 0 0 60px #80d8ca08}.contact-panel>*{position:relative;z-index:1}.contact-panel h2{font-size:27px;letter-spacing:-.04em;margin:7px 0}.contact-panel p{color:#b5cbd0;font-size:14px;margin:0}.contact-email{background:var(--mint);color:#10313d;border-radius:8px;padding:13px 17px;font-size:14px;font-weight:800;white-space:nowrap}.footer{padding:20px 0 30px;color:#8799a0;font-size:12.5px;text-align:center}.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes float{50%{transform:translate(-25px,25px)}}@keyframes cardFloat{50%{transform:translateY(-9px) rotate(-1deg)}}@keyframes tagFloat{50%{transform:translateY(-8px)}}@keyframes bars{to{filter:saturate(.65);transform:scaleY(.78);transform-origin:bottom}}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:25px}.hero{padding:65px 0 45px}.hero-visual{min-height:330px}.expertise-grid{grid-template-columns:repeat(2,1fr)}.real-grid{grid-template-columns:1fr}.navlinks{gap:14px}.real-card{grid-template-columns:120px 1fr}}
+@media(max-width:620px){.wrap{width:min(100% - 30px,1160px)}.nav{height:65px}.menu{display:block}.navlinks{display:none;position:absolute;top:65px;left:0;right:0;background:#f8fbfc;padding:16px 22px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks a{padding:8px}.nav-cta{text-align:center}.hero{padding-top:53px}.hero-grid{gap:0}h1{font-size:43px}.lead{font-size:14px}.metrics{gap:19px}.metric strong{font-size:21px}.hero-visual{min-height:300px}.orbit{width:270px;height:270px}.visual-card{width:300px;padding:20px}.floating-tag{right:0;bottom:6px}.expertise-grid{grid-template-columns:1fr}.real-card{grid-template-columns:95px 1fr}.real-art{padding:12px}.art-number{font-size:23px}.real-copy{padding:16px}.demo-top{align-items:flex-start;flex-direction:column}.demo-controls{width:100%;flex-wrap:wrap}.demo-controls input{flex:1;max-width:none}.demo-table th,.demo-table td{padding:10px 9px}.demo-table{font-size:12.5px}.demo-table th:nth-child(2),.demo-table td:nth-child(2){display:none}.timeline{grid-template-columns:1fr}.contact-panel{padding:27px 23px;align-items:flex-start;flex-direction:column}.contact-panel h2{font-size:24px}.contact-email{white-space:normal}.section-head{margin-bottom:25px}section{padding:63px 0}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+.navlinks{order:2}.menu{order:4}
+.langs{order:3;display:flex;align-items:center;gap:2px;font-size:14px;font-weight:700}
+.langs button{border:0;background:none;color:#506671;padding:6px 11px;border-radius:99px;cursor:pointer;font:inherit}
+.langs button:hover{color:#1d6fd1}
+.langs button[aria-pressed=true]{background:#dcecff;color:#1d6fd1}
+.langs i{font-style:normal;color:#9ab}
+.art-label{font-size:11px;letter-spacing:.06em;overflow-wrap:anywhere}
+@media(min-width:621px){.real-card{grid-template-columns:150px 1fr}}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+.kpi strong{display:block;font-size:36px;letter-spacing:-.04em;line-height:1.2}
+.kpi span{font-size:14px;color:var(--muted)}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.chartcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.chartcard h3{font-size:16px;margin-bottom:8px}
+.chartcard canvas{width:100%;height:250px;display:block}
+.cl{display:flex;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--muted);margin-top:8px}
+.cl i{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}
+.cl b{color:var(--ink);font-variant-numeric:tabular-nums;margin-left:4px}
+.me{display:grid;grid-template-columns:360px 1fr;gap:44px;align-items:start}
+.me img{width:100%;border-radius:18px;display:block;box-shadow:0 18px 40px #0b2a3a22}
+.me p{color:var(--muted);font-size:16px;margin-bottom:22px}
+.me h3{font-size:22px;margin-bottom:6px}
+.rates{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:15.5px}
+.rates th,.rates td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left}
+.rates th{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rates td+td{font-weight:800;white-space:nowrap}
+.mini-note{font-size:13.5px;color:var(--muted);margin-bottom:20px}
+@media(max-width:1000px){.menu{display:block;order:3}.navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:#f8fbfc;padding:14px 22px 20px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:6px}.navlinks.open{display:flex}.navlinks a{padding:8px 0}.langs{order:2;margin-left:auto}}
+@media(max-width:850px){.charts,.kpis,.me{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap nav"><a class="brand" href="#accueil"><span class="monogram">CB</span><span>CAROLINE BIDAULT<small>Software · Data · Systems</small></span></a><div class="langs" role="group" aria-label="Langue / Language"><button data-l="fr" aria-pressed="true">FR</button><i>·</i><button data-l="en" aria-pressed="false">EN</button><i>·</i><button data-l="de" aria-pressed="false">DE</button><i>·</i><button data-l="it" aria-pressed="false">IT</button></div><button class="menu" aria-label="Ouvrir le menu" aria-expanded="false">☰</button><nav class="navlinks"><a href="#accueil">Accueil</a><a href="#expertises">Expertises</a><a href="#realisations">Réalisations</a><a href="#offres">Offres</a><a href="#parcours">Parcours</a><a href="#moi">Moi</a><a class="nav-cta" href="#contact">Contact</a></nav></div></header>
+<main>
+<section class="hero" id="accueil"><div class="wrap hero-grid"><div><div class="eyebrow">Développement & solutions informatiques</div><h1>Transformer les idées en <span>solutions concrètes.</span></h1><p class="lead">Je conçois, développe et fais évoluer des applications métier. Du développement web à l'exploitation des données, de l'automatisation à l'infrastructure, j'interviens sur l'ensemble du cycle de vie des solutions informatiques.</p><div class="actions"><a class="btn primary" href="#realisations">Découvrir mes réalisations <span>↗</span></a><a class="btn secondary" href="#expertises">Mes compétences</a></div><div class="metrics"><div class="metric"><strong><span class="count" data-target="20">0</span>+</strong><span>ans d'expérience</span></div><div class="metric"><strong>Multi</strong><span>technologies</span></div><div class="metric"><strong>End-to-end</strong><span>esprit projet</span></div></div></div><div class="hero-visual"><div class="orbit"></div><div class="visual-card"><div class="visual-head"><span>UNE APPROCHE TRANSVERSALE</span><span>01 — 04</span></div><div class="visual-title">De l'idée à la solution</div><div class="visual-sub">Une vision globale, de l'analyse à la mise en production.</div><div class="mini-flow"><div class="flow-node"><b>ANALYSER</b><small>Comprendre</small></div><div class="flow-arrow">→</div><div class="flow-node"><b>CONCEVOIR</b><small>Structurer</small></div></div><div class="mini-flow"><div class="flow-node"><b>DÉVELOPPER</b><small>Construire</small></div><div class="flow-arrow">→</div><div class="flow-node"><b>ÉVOLUER</b><small>Améliorer</small></div></div><div class="signal"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="floating-tag"><b>●</b> Analyse · Développement · Systèmes</div></div></div></section>
+<section id="expertises"><div class="wrap"><div class="section-head reveal"><div class="kicker">01 / Expertises</div><h2>Des compétences complémentaires.</h2><p>Une expérience qui couvre le développement, les données et les systèmes d'information.</p></div><div class="expertise-grid">
+<article class="skill reveal"><div class="skill-icon">⌘</div><h3>Développement Full Stack</h3><p>Applications web et métier, interfaces, logique applicative et API.</p><div class="tags"><span class="tag">C# / .NET</span><span class="tag">PHP</span><span class="tag">Blazor</span><span class="tag">JavaScript</span></div></article>
+<article class="skill reveal"><div class="skill-icon">▤</div><h3>Data & bases de données</h3><p>Requêtes, traitements, consolidation, analyse et optimisation.</p><div class="tags"><span class="tag">SQL Server</span><span class="tag">Oracle</span><span class="tag">MySQL</span><span class="tag">Excel / VBA</span></div></article>
+<article class="skill reveal"><div class="skill-icon">⌁</div><h3>Automatisation & IA</h3><p>Scripts, tâches planifiées, collecte automatisée et exploration de l'IA locale.</p><div class="tags"><span class="tag">Python</span><span class="tag">PowerShell</span><span class="tag">Batch</span><span class="tag">IA locale</span></div></article>
+<article class="skill reveal"><div class="skill-icon">▦</div><h3>Infrastructure & systèmes</h3><p>Serveurs, virtualisation, réseaux, administration et déploiement.</p><div class="tags"><span class="tag">IIS</span><span class="tag">Windows</span><span class="tag">Hyper-V</span><span class="tag">OpenStack</span></div></article>
+<article class="skill reveal"><div class="skill-icon">◉</div><h3>Support & exploitation</h3><p>Diagnostic, incidents, gestion des accès et accompagnement des utilisateurs.</p><div class="tags"><span class="tag">N1 / N2 / N3</span><span class="tag">LDAP</span><span class="tag">Exchange</span><span class="tag">Citrix</span></div></article>
+<article class="skill reveal"><div class="skill-icon">⇄</div><h3>Projets & métiers</h3><p>Analyse des besoins, coordination, documentation et formation.</p><div class="tags"><span class="tag">Analyse</span><span class="tag">Coordination</span><span class="tag">Documentation</span></div></article>
+</div></div></section>
+<section class="realizations" id="realisations"><div class="wrap"><div class="section-head reveal"><div class="kicker">02 / Réalisations</div><h2>Des solutions utiles, pensées pour le terrain.</h2><p>Quelques exemples de réalisations et de problématiques professionnelles abordées.</p></div><div class="real-grid">
+<article class="real-card reveal"><div class="real-art"><span class="art-label">INDUSTRIAL MONITORING</span><span class="art-number">02</span><span class="art-caption">Urgences · Suivi · Alertes</span></div><div class="real-copy"><div class="kicker">CERN · Informatique industrielle</div><h3>Sentinel</h3><p>Conception d'une plateforme de supervision centralisant les informations d'automates, les alarmes, les historiques et les interventions.</p><div class="tags"><span class="tag">C#</span><span class="tag">Blazor</span><span class="tag">Python</span><span class="tag">MySQL</span></div></div></article>
+<article class="real-card reveal"><div class="real-art"><span class="art-label">DATA PIPELINE</span><span class="art-number">API →</span><span class="art-caption">Collecte · Consolidation</span></div><div class="real-copy"><div class="kicker">Data · Automatisation</div><h3>Collecte et centralisation des données</h3><p>Flux planifiés, récupération de données issues de sources hétérogènes, traitements et consolidation dans une base centrale.</p><div class="tags"><span class="tag">PowerShell</span><span class="tag">Python</span><span class="tag">REST</span><span class="tag">SQL</span></div></div></article>
+<article class="real-card reveal"><div class="real-art"><span class="art-label">ENERGY ANALYTICS</span><span class="art-number">∿</span><span class="art-caption">Séries temporelles</span></div><div class="real-copy"><div class="kicker">CERN · Analyse de données</div><h3>Suivi énergétique</h3><p>Visualisation et analyse des consommations, regroupement de mesures, consolidation de données et tableaux de bord.</p><div class="tags"><span class="tag">Graphiques</span><span class="tag">SQL</span><span class="tag">Analyse</span><span class="tag">Export Excel</span></div></div></article>
+<article class="real-card reveal"><div class="real-art"><span class="art-label">BUSINESS APPLICATIONS</span><span class="art-number">GED</span><span class="art-caption">Workflow · Intranet</span></div><div class="real-copy"><div class="kicker">IT · Transformation</div><h3>Applications métier & intranets</h3><p>Développement d'applications d'administration, intranets, GED, workflows et outils de gestion adaptés aux besoins des équipes.</p><div class="tags"><span class="tag">C# / .NET</span><span class="tag">SQL Server</span><span class="tag">IIS</span><span class="tag">LDAP</span></div></div></article>
+</div></div></section>
+<section><div class="wrap"><div class="section-head reveal"><div class="kicker">03 / Démonstration interactive</div><h2>Un aperçu des outils que je conçois.</h2><p>Exemple fictif d'une grille de suivi métier, avec recherche, filtre et statuts.</p></div><div class="demo-wrap reveal"><div class="demo-top"><div><b>Suivi des interventions</b><small>Données de démonstration uniquement</small></div><div class="demo-controls"><input id="search" type="search" placeholder="Rechercher un équipement…" aria-label="Rechercher un équipement"><select id="statusFilter" aria-label="Filtrer par statut"><option value="all">Tous les statuts</option><option value="Terminé">Terminé</option><option value="En cours">En cours</option><option value="Urgent">Urgent</option></select></div></div><div style="overflow-x:auto"><table class="demo-table"><thead><tr><th>Équipement</th><th>Service</th><th>Statut</th><th>Dernière mise à jour</th></tr></thead><tbody id="demoRows"></tbody></table></div><div class="demo-foot" id="demoCount">5 élément(s) affiché(s) · Grille interactive · Exemple</div></div></div></section>
+<section id="statistiques"><div class="wrap"><div class="section-head reveal"><div class="kicker">04 / Statistiques en direct</div><h2>Des données qui prennent vie.</h2><p>Exemples de graphiques animés construits à partir de données fictives.</p></div>
+<div class="kpis reveal"><div class="kpi"><strong class="kv" data-v="128" data-d="0" data-u="">0</strong><span>Équipements suivis</span></div><div class="kpi"><strong class="kv" data-v="99.2" data-d="1" data-u=" %">0</strong><span>Disponibilité</span></div><div class="kpi"><strong class="kv" data-v="1450" data-d="0" data-u="">0</strong><span>Alertes traitées</span></div></div>
+<div class="charts reveal"><div class="chartcard"><h3>Consommation mensuelle et degrés-jours</h3><canvas id="sc1"></canvas><div class="cl"><span><i style="background:#56c7b5"></i>Consommation (MWh)</span><span><i style="background:#e8b86b"></i>Degrés-jours</span></div></div>
+<div class="chartcard"><h3>Mesures en temps réel</h3><canvas id="sc2"></canvas><div class="cl"><span><i style="background:#078f91"></i>Départ<b id="s1"></b></span><span><i style="background:#e8b86b"></i>Retour<b id="s2"></b></span><span><i style="background:#102f3d"></i>Extérieur<b id="s3"></b></span></div></div></div></div></section>
+
+<section id="offres"><div class="wrap"><div class="section-head reveal"><div class="kicker">05 / Offres</div><h2>Le format qui correspond à votre besoin.</h2><p>Mission au forfait, renfort à la semaine ou au mois, maintenance, audit ou formation : je m'adapte à votre situation.</p></div>
+<div class="expertise-grid reveal">
+<article class="skill"><h3>Mission au forfait</h3><p>Un livrable défini à l'avance : application, tableau de bord, migration, automatisation.</p></article>
+<article class="skill"><h3>Renfort à la semaine ou au mois</h3><p>Je rejoins votre équipe, sur site ou à distance, en mission ou en CDD.</p></article>
+<article class="skill"><h3>Poste en CDI</h3><p>Disponible avec un préavis de deux mois.</p></article>
+</div><p class="mini-note" style="margin-top:18px"><a href="#moi" style="color:var(--teal);font-weight:700">Voir mes tarifs</a></p></div></section>
+
+<section id="parcours"><div class="wrap"><div class="section-head reveal"><div class="kicker">06 / Parcours</div><h2>Une expérience construite dans des environnements variés.</h2></div><div class="timeline">
+<article class="job reveal"><h3>CERN</h3><time>2025 — aujourd'hui</time><p>Développement logiciel, supervision industrielle, intégration de données et outils de suivi.</p></article>
+<article class="job reveal"><h3>PSiDEO</h3><time>2025</time><p>Support informatique, postes Windows, messagerie et gestion des accès.</p></article>
+<article class="job reveal"><h3>EFG Bank</h3><time>2019 — 2024</time><p>Support applicatif bancaire, SQL Server, déploiements et gestion des accès.</p></article>
+<article class="job reveal"><h3>TE38</h3><time>2017 — 2019</time><p>Applications C#, intranet, infrastructure, gestion de projets et téléphonie.</p></article>
+<article class="job reveal"><h3>Mairie de Franconville</h3><time>2009 — 2016</time><p>Développement .NET, applications internes, IIS, support et gestion du parc.</p></article>
+<article class="job reveal"><h3>Softing / Netquartz</h3><time>2000 — 2009</time><p>Développement logiciel, applications clients, C#, VB, .NET et JavaScript.</p></article>
+</div><p class="reveal" style="margin-top:24px;color:var(--muted);font-size:13.5px">Formation : DUT Informatique — Génie logiciel, Université Sorbonne Paris Nord. Langues : français natif, anglais bon niveau, allemand scolaire.</p></div></section>
+<section id="moi"><div class="wrap"><div class="section-head reveal"><div class="kicker">07 / Moi</div><h2>Qui je suis, et ce que je propose.</h2></div>
+<div class="me reveal"><img src="photo.png" alt="Développeuse de dos devant plusieurs écrans de code" loading="lazy"><div>
+<p>Développeuse depuis plus de 20 ans, autonome et orientée solutions. Je travaille entre Genève et la Haute-Savoie, et je suis disponible en CDI avec deux mois de préavis, en CDD ou en mission.</p>
+<h3>Mes tarifs</h3>
+<table class="rates"><tbody>
+<tr><td>Journée</td><td>850 CHF</td></tr>
+<tr><td>Semaine (5 jours)</td><td>4 000 CHF</td></tr>
+<tr><td>Mois (20 jours)</td><td>16 000 CHF</td></tr>
+</tbody></table>
+<p class="mini-note">Tarifs indicatifs à partir de, hors taxes. Un devis précis est établi selon la durée, le lieu et la complexité.</p>
+<a class="button primary" href="mailto:cmlbidault@proton.me?subject=Demande%20de%20devis">Demander un devis <span>↗</span></a></div></div></div></section>
+
+<section class="contact" id="contact"><div class="wrap"><div class="contact-panel reveal"><div><div class="kicker" style="color:#80d8ca">Contact</div><h2>Parlons de votre prochain projet.</h2><p>Développement, évolution applicative, automatisation ou intégration de systèmes.</p></div><a class="contact-email" href="mailto:cmlbidault@proton.me">cmlbidault@proton.me ↗</a></div></div></section>
+</main><footer class="footer">CAROLINE BIDAULT · PORTFOLIO PROFESSIONNEL · <span id="year"></span></footer>
+<script>
+const I18N=[
+["Software · Data · Systems","Software · Data · Systems","Software · Daten · Systeme","Software · Dati · Sistemi"],
+["Accueil","Home","Startseite","Home"],
+["Expertises","Expertise","Kompetenzen","Competenze"],
+["Réalisations","Projects","Projekte","Realizzazioni"],
+["Parcours","Experience","Werdegang","Percorso"],
+["Contact","Contact","Kontakt","Contatto"],
+["Développement & solutions informatiques","Development & IT solutions","Softwareentwicklung & IT-Lösungen","Sviluppo e soluzioni informatiche"],
+["Transformer les idées en","Turning ideas into","Ideen verwandeln in","Trasformare le idee in"],
+["solutions concrètes.","practical solutions.","greifbare Lösungen.","soluzioni concrete."],
+["Je conçois, développe et fais évoluer des applications métier. Du développement web à l'exploitation des données, de l'automatisation à l'infrastructure, j'interviens sur l'ensemble du cycle de vie des solutions informatiques.","I design, build and evolve business applications. From web development to data processing, from automation to infrastructure, I work across the whole life cycle of IT solutions.","Ich konzipiere, entwickle und pflege Fachanwendungen. Von der Webentwicklung über die Datenauswertung bis zur Automatisierung und Infrastruktur begleite ich den gesamten Lebenszyklus von IT-Lösungen.","Progetto, sviluppo e faccio evolvere applicazioni gestionali. Dallo sviluppo web alla gestione dei dati, dall'automazione all'infrastruttura, seguo l'intero ciclo di vita delle soluzioni informatiche."],
+["Découvrir mes réalisations","See my projects","Meine Projekte ansehen","Scopri i miei progetti"],
+["Mes compétences","My skills","Meine Kompetenzen","Le mie competenze"],
+["ans d'expérience","years of experience","Jahre Erfahrung","anni di esperienza"],
+["technologies","technologies","Technologien","tecnologie"],
+["esprit projet","project mindset","Projektdenken","approccio per progetti"],
+["UNE APPROCHE TRANSVERSALE","A CROSS-FUNCTIONAL APPROACH","EIN GANZHEITLICHER ANSATZ","UN APPROCCIO TRASVERSALE"],
+["De l'idée à la solution","From idea to solution","Von der Idee zur Lösung","Dall'idea alla soluzione"],
+["Une vision globale, de l'analyse à la mise en production.","A global view, from analysis to production.","Ganzheitlich gedacht: von der Analyse bis zum Produktivbetrieb.","Una visione globale, dall'analisi alla messa in produzione."],
+["ANALYSER","ANALYSE","ANALYSIEREN","ANALIZZARE"],["Comprendre","Understand","Verstehen","Capire"],
+["CONCEVOIR","DESIGN","ENTWERFEN","PROGETTARE"],["Structurer","Structure","Strukturieren","Strutturare"],
+["DÉVELOPPER","DEVELOP","ENTWICKELN","SVILUPPARE"],["Construire","Build","Umsetzen","Costruire"],
+["ÉVOLUER","EVOLVE","WEITERENTWICKELN","EVOLVERE"],["Améliorer","Improve","Verbessern","Migliorare"],
+["Analyse · Développement · Systèmes","Analysis · Development · Systems","Analyse · Entwicklung · Systeme","Analisi · Sviluppo · Sistemi"],
+["01 / Expertises","01 / Expertise","01 / Kompetenzen","01 / Competenze"],
+["Des compétences complémentaires.","Complementary skills.","Sich ergänzende Kompetenzen.","Competenze complementari."],
+["Une expérience qui couvre le développement, les données et les systèmes d'information.","Experience covering development, data and information systems.","Erfahrung in Entwicklung, Daten und Informationssystemen.","Un'esperienza che copre sviluppo, dati e sistemi informativi."],
+["Développement Full Stack","Full-stack development","Full-Stack-Entwicklung","Sviluppo full stack"],
+["Applications web et métier, interfaces, logique applicative et API.","Web and business applications, interfaces, application logic and APIs.","Web- und Fachanwendungen, Oberflächen, Anwendungslogik und APIs.","Applicazioni web e gestionali, interfacce, logica applicativa e API."],
+["Data & bases de données","Data & databases","Daten & Datenbanken","Dati e database"],
+["Requêtes, traitements, consolidation, analyse et optimisation.","Queries, processing, consolidation, analysis and optimisation.","Abfragen, Verarbeitung, Konsolidierung, Analyse und Optimierung.","Query, elaborazione, consolidamento, analisi e ottimizzazione."],
+["Automatisation & IA","Automation & AI","Automatisierung & KI","Automazione e IA"],
+["Scripts, tâches planifiées, collecte automatisée et exploration de l'IA locale.","Scripts, scheduled tasks, automated data collection and exploration of local AI.","Skripte, geplante Aufgaben, automatisierte Datenerfassung und lokale KI.","Script, attività pianificate, raccolta automatica dei dati e IA locale."],
+["IA locale","Local AI","Lokale KI","IA locale"],
+["Infrastructure & systèmes","Infrastructure & systems","Infrastruktur & Systeme","Infrastruttura e sistemi"],
+["Serveurs, virtualisation, réseaux, administration et déploiement.","Servers, virtualisation, networks, administration and deployment.","Server, Virtualisierung, Netzwerke, Administration und Deployment.","Server, virtualizzazione, reti, amministrazione e rilascio."],
+["Support & exploitation","Support & operations","Support & Betrieb","Supporto ed esercizio"],
+["Diagnostic, incidents, gestion des accès et accompagnement des utilisateurs.","Diagnosis, incidents, access management and user assistance.","Diagnose, Störungen, Zugriffsverwaltung und Anwenderbetreuung.","Diagnosi, incidenti, gestione degli accessi e assistenza agli utenti."],
+["Projets & métiers","Projects & business","Projekte & Fachbereiche","Progetti e processi aziendali"],
+["Analyse des besoins, coordination, documentation et formation.","Needs analysis, coordination, documentation and training.","Bedarfsanalyse, Koordination, Dokumentation und Schulung.","Analisi dei bisogni, coordinamento, documentazione e formazione."],
+["Analyse","Analysis","Analyse","Analisi"],["Coordination","Coordination","Koordination","Coordinamento"],["Documentation","Documentation","Dokumentation","Documentazione"],
+["02 / Réalisations","02 / Projects","02 / Projekte","02 / Realizzazioni"],
+["Des solutions utiles, pensées pour le terrain.","Useful solutions, designed for real-world use.","Nützliche Lösungen aus der Praxis.","Soluzioni utili, pensate per il lavoro sul campo."],
+["Quelques exemples de réalisations et de problématiques professionnelles abordées.","A few examples of projects and professional challenges.","Einige Beispiele für Projekte und berufliche Herausforderungen.","Alcuni esempi di progetti e di problematiche professionali affrontate."],
+["Urgences · Suivi · Alertes","Emergencies · Tracking · Alerts","Dringlichkeiten · Überwachung · Alarme","Urgenze · Monitoraggio · Allarmi"],
+["Collecte · Consolidation","Collection · Consolidation","Erfassung · Konsolidierung","Raccolta · Consolidamento"],
+["Séries temporelles","Time series","Zeitreihen","Serie temporali"],
+["CERN · Informatique industrielle","CERN · Industrial IT","CERN · Industrielle IT","CERN · Informatica industriale"],
+["Data · Automatisation","Data · Automation","Daten · Automatisierung","Dati · Automazione"],
+["CERN · Analyse de données","CERN · Data analysis","CERN · Datenanalyse","CERN · Analisi dei dati"],
+["Conception d'une plateforme de supervision centralisant les informations d'automates, les alarmes, les historiques et les interventions.","Design of a monitoring platform centralising controller data, alarms, histories and maintenance work.","Konzeption einer Überwachungsplattform, die Steuerungsdaten, Alarme, Historien und Einsätze zentral bündelt.","Progettazione di una piattaforma di supervisione che centralizza dati dei PLC, allarmi, storici e interventi."],
+["Collecte et centralisation des données","Data collection and centralisation","Datenerfassung und -zentralisierung","Raccolta e centralizzazione dei dati"],
+["Flux planifiés, récupération de données issues de sources hétérogènes, traitements et consolidation dans une base centrale.","Scheduled flows, retrieval of data from heterogeneous sources, processing and consolidation into a central database.","Geplante Abläufe, Abruf von Daten aus unterschiedlichen Quellen, Verarbeitung und Konsolidierung in einer zentralen Datenbank.","Flussi pianificati, recupero di dati da fonti eterogenee, elaborazione e consolidamento in un database centrale."],
+["Suivi énergétique","Energy monitoring","Energiemonitoring","Monitoraggio energetico"],
+["Visualisation et analyse des consommations, regroupement de mesures, consolidation de données et tableaux de bord.","Visualisation and analysis of consumption, grouping of measurements, data consolidation and dashboards.","Visualisierung und Analyse des Verbrauchs, Zusammenführung von Messwerten, Datenkonsolidierung und Dashboards.","Visualizzazione e analisi dei consumi, raggruppamento delle misure, consolidamento dei dati e dashboard."],
+["Graphiques","Charts","Diagramme","Grafici"],
+["Applications métier & intranets","Business applications & intranets","Fachanwendungen & Intranets","Applicazioni gestionali e intranet"],
+["Développement d'applications d'administration, intranets, GED, workflows et outils de gestion adaptés aux besoins des équipes.","Development of administration applications, intranets, document management, workflows and management tools tailored to teams' needs.","Entwicklung von Verwaltungsanwendungen, Intranets, Dokumentenmanagement, Workflows und Werkzeugen, die auf die Bedürfnisse der Teams zugeschnitten sind.","Sviluppo di applicazioni amministrative, intranet, gestione documentale, workflow e strumenti di gestione su misura per i team."],
+["03 / Démonstration interactive","03 / Interactive demo","03 / Interaktive Demo","03 / Demo interattiva"],
+["Un aperçu des outils que je conçois.","A preview of the tools I build.","Ein Einblick in die Werkzeuge, die ich entwickle.","Un'anteprima degli strumenti che realizzo."],
+["Exemple fictif d'une grille de suivi métier, avec recherche, filtre et statuts.","Fictional example of a business tracking grid with search, filter and statuses.","Fiktives Beispiel einer Fachübersicht mit Suche, Filter und Status.","Esempio fittizio di una tabella di monitoraggio con ricerca, filtro e stati."],
+["Suivi des interventions","Maintenance tracking","Einsatzverfolgung","Monitoraggio degli interventi"],
+["Données de démonstration uniquement","Demonstration data only","Nur Demodaten","Solo dati dimostrativi"],
+["Rechercher un équipement…","Search equipment…","Gerät suchen…","Cerca un'apparecchiatura…"],
+["Rechercher un équipement","Search equipment","Gerät suchen","Cerca un'apparecchiatura"],
+["Filtrer par statut","Filter by status","Nach Status filtern","Filtra per stato"],
+["Tous les statuts","All statuses","Alle Status","Tutti gli stati"],
+["Terminé","Done","Erledigt","Completato"],["En cours","In progress","In Bearbeitung","In corso"],["Urgent","Urgent","Dringend","Urgente"],
+["Équipement","Equipment","Gerät","Apparecchiatura"],["Service","Department","Abteilung","Servizio"],["Statut","Status","Status","Stato"],
+["Dernière mise à jour","Last update","Letzte Aktualisierung","Ultimo aggiornamento"],
+["Automate zone C","PLC zone C","SPS Zone C","PLC zona C"],["Chaudière secteur B","Boiler sector B","Heizkessel Sektor B","Caldaia settore B"],
+["Pompe primaire A","Primary pump A","Primärpumpe A","Pompa primaria A"],["Régulation zone E","Zone E control","Regelung Zone E","Regolazione zona E"],
+["Ventilation bâtiment D","Building D ventilation","Lüftung Gebäude D","Ventilazione edificio D"],
+["Chauffage","Heating","Heizung","Riscaldamento"],["Automatisme","Automation","Automatisierung","Automazione"],["Ventilation","Ventilation","Lüftung","Ventilazione"],
+["élément(s) affiché(s) · Grille interactive · Données fictives","item(s) shown · Interactive grid · Sample data","Element(e) angezeigt · Interaktive Tabelle · Beispieldaten","elemento/i visualizzato/i · Tabella interattiva · Dati di esempio"],
+["06 / Parcours","06 / Experience","06 / Werdegang","06 / Percorso"],
+["Une expérience construite dans des environnements variés.","Experience built in a wide range of environments.","Erfahrung aus unterschiedlichsten Umfeldern.","Un'esperienza maturata in ambienti diversi."],
+["2025 — aujourd'hui","2025 — present","2025 — heute","2025 — oggi"],
+["Développement logiciel, supervision industrielle, intégration de données et outils de suivi.","Software development, industrial monitoring, data integration and tracking tools.","Softwareentwicklung, industrielle Überwachung, Datenintegration und Nachverfolgungswerkzeuge.","Sviluppo software, supervisione industriale, integrazione dei dati e strumenti di monitoraggio."],
+["Support informatique, postes Windows, messagerie et gestion des accès.","IT support, Windows workstations, email and access management.","IT-Support, Windows-Arbeitsplätze, E-Mail und Zugriffsverwaltung.","Supporto informatico, postazioni Windows, posta elettronica e gestione degli accessi."],
+["Support applicatif bancaire, SQL Server, déploiements et gestion des accès.","Banking application support, SQL Server, deployments and access management.","Applikationssupport im Bankwesen, SQL Server, Deployments und Zugriffsverwaltung.","Supporto applicativo bancario, SQL Server, rilasci e gestione degli accessi."],
+["Applications C#, intranet, infrastructure, gestion de projets et support.","C# applications, intranet, infrastructure, project management and support.","C#-Anwendungen, Intranet, Infrastruktur, Projektmanagement und Support.","Applicazioni C#, intranet, infrastruttura, gestione di progetti e supporto."],
+["Développement .NET, applications internes, IIS, support et gestion du parc.",".NET development, internal applications, IIS, support and IT asset management.",".NET-Entwicklung, interne Anwendungen, IIS, Support und Verwaltung der IT-Ausstattung.","Sviluppo .NET, applicazioni interne, IIS, supporto e gestione del parco informatico."],
+["Développement logiciel, applications clients, C#, VB, .NET et JavaScript.","Software development, customer applications, C#, VB, .NET and JavaScript.","Softwareentwicklung, Kundenanwendungen, C#, VB, .NET und JavaScript.","Sviluppo software, applicazioni per i clienti, C#, VB, .NET e JavaScript."],
+["Formation : DUT Informatique — Génie logiciel, Université Sorbonne Paris Nord. Langues : français natif, anglais bon niveau, allemand scolaire.","Education: DUT in Computer Science (Software Engineering), Université Sorbonne Paris Nord. Languages: native French, good English, basic German.","Ausbildung: DUT Informatik (Software Engineering), Université Sorbonne Paris Nord. Sprachen: Französisch (Muttersprache), Englisch gut, Deutsch Grundkenntnisse.","Formazione: DUT in Informatica (Ingegneria del software), Université Sorbonne Paris Nord. Lingue: francese madrelingua, inglese buono, tedesco scolastico."],
+["Parlons de votre prochain projet.","Let's talk about your next project.","Sprechen wir über Ihr nächstes Projekt.","Parliamo del vostro prossimo progetto."],
+["Développement, évolution applicative, automatisation ou intégration de systèmes.","Development, application evolution, automation or systems integration.","Entwicklung, Weiterentwicklung von Anwendungen, Automatisierung oder Systemintegration.","Sviluppo, evoluzione applicativa, automazione o integrazione di sistemi."],
+["Offres","Services","Angebote","Offerte"],["Moi","About me","Über mich","Chi sono"],
+["04 / Statistiques en direct","04 / Live statistics","04 / Statistiken in Echtzeit","04 / Statistiche in tempo reale"],
+["Des données qui prennent vie.","Data that comes alive.","Daten, die lebendig werden.","Dati che prendono vita."],
+["Exemples de graphiques animés construits à partir de données fictives.","Examples of animated charts built from sample data.","Beispiele für animierte Diagramme auf Basis von Beispieldaten.","Esempi di grafici animati costruiti con dati di esempio."],
+["Équipements suivis","Monitored devices","Überwachte Geräte","Apparecchiature monitorate"],["Disponibilité","Availability","Verfügbarkeit","Disponibilità"],["Alertes traitées","Alerts handled","Bearbeitete Alarme","Allarmi gestiti"],
+["Consommation mensuelle et degrés-jours","Monthly consumption and degree-days","Monatsverbrauch und Gradtage","Consumi mensili e gradi-giorno"],
+["Consommation (MWh)","Consumption (MWh)","Verbrauch (MWh)","Consumo (MWh)"],["Degrés-jours","Degree-days","Gradtage","Gradi-giorno"],
+["Mesures en temps réel","Real-time measurements","Messwerte in Echtzeit","Misure in tempo reale"],
+["Départ","Flow","Vorlauf","Mandata"],["Retour","Return","Rücklauf","Ritorno"],["Extérieur","Outdoor","Außen","Esterno"],
+["05 / Offres","05 / Services","05 / Angebote","05 / Offerte"],
+["Le format qui correspond à votre besoin.","The format that fits your needs.","Das Format, das zu Ihrem Bedarf passt.","Il formato adatto alle vostre esigenze."],
+["Mission au forfait, renfort à la semaine ou au mois, maintenance, audit ou formation : je m'adapte à votre situation.","Fixed-price project, weekly or monthly support, maintenance, audit or training: I adapt to your situation.","Festpreisprojekt, Verstärkung pro Woche oder Monat, Wartung, Audit oder Schulung: Ich passe mich Ihrer Situation an.","Progetto a forfait, supporto settimanale o mensile, manutenzione, audit o formazione: mi adatto alla vostra situazione."],
+["Mission au forfait","Fixed-price project","Festpreisprojekt","Progetto a forfait"],
+["Un livrable défini à l'avance : application, tableau de bord, migration, automatisation.","A deliverable defined in advance: application, dashboard, migration, automation.","Ein im Voraus definiertes Ergebnis: Anwendung, Dashboard, Migration, Automatisierung.","Un risultato definito in anticipo: applicazione, dashboard, migrazione, automazione."],
+["Renfort à la semaine ou au mois","Weekly or monthly support","Verstärkung pro Woche oder Monat","Supporto settimanale o mensile"],
+["Je rejoins votre équipe, sur site ou à distance, en mission ou en CDD.","I join your team, on site or remotely, as a freelancer or on a fixed-term contract.","Ich verstärke Ihr Team vor Ort oder remote, als Freelancerin oder befristet.","Mi unisco al vostro team, in sede o da remoto, come freelance o a tempo determinato."],
+["Maintenance mensuelle","Monthly maintenance","Monatliche Wartung","Manutenzione mensile"],
+["Un forfait de jours chaque mois pour faire évoluer et surveiller vos applications.","A set number of days each month to maintain and evolve your applications.","Ein monatliches Tagekontingent für Pflege und Weiterentwicklung Ihrer Anwendungen.","Un monte giorni mensile per far evolvere e tenere sotto controllo le vostre applicazioni."],
+["Audit d'automatisation","Automation audit","Automatisierungs-Audit","Audit di automazione"],
+["Un à deux jours pour repérer ce qui peut être automatisé et par où commencer.","One to two days to identify what can be automated and where to start.","Ein bis zwei Tage, um Automatisierungspotenzial zu erkennen und den Einstieg zu planen.","Uno o due giorni per individuare cosa si può automatizzare e da dove iniziare."],
+["Formation","Training","Schulung","Formazione"],
+["Sessions pour vos équipes : Excel et VBA, PowerShell, automatisation, premiers pas avec l'IA.","Sessions for your teams: Excel and VBA, PowerShell, automation, first steps with AI.","Schulungen für Ihre Teams: Excel und VBA, PowerShell, Automatisierung, erste Schritte mit KI.","Sessioni per i vostri team: Excel e VBA, PowerShell, automazione, primi passi con l'IA."],
+["Poste en CDI","Permanent position","Festanstellung","Contratto a tempo indeterminato"],
+["Disponible avec un préavis de deux mois.","Available with two months' notice.","Verfügbar mit zwei Monaten Kündigungsfrist.","Disponibile con due mesi di preavviso."],
+["Voir mes tarifs","See my rates","Meine Tarife ansehen","Vedi le mie tariffe"],
+["07 / Moi","07 / About me","07 / Über mich","07 / Chi sono"],
+["Qui je suis, et ce que je propose.","Who I am and what I offer.","Wer ich bin und was ich anbiete.","Chi sono e cosa propongo."],
+["Développeuse depuis plus de 20 ans, autonome et orientée solutions. Je travaille entre Genève et la Haute-Savoie, et je suis disponible en CDI avec deux mois de préavis, en CDD ou en mission.","A developer for over 20 years, independent and solution-oriented. I work between Geneva and Haute-Savoie, and I am available for permanent roles (two months' notice), fixed-term contracts or freelance missions.","Seit über 20 Jahren Entwicklerin, selbstständig und lösungsorientiert. Ich arbeite zwischen Genf und Haute-Savoie und stehe für eine Festanstellung (zwei Monate Kündigungsfrist), befristete Verträge oder freie Einsätze zur Verfügung.","Sviluppatrice da oltre 20 anni, autonoma e orientata alle soluzioni. Lavoro tra Ginevra e l'Alta Savoia e sono disponibile per un contratto a tempo indeterminato (due mesi di preavviso), a tempo determinato o per incarichi freelance."],
+["Mes tarifs","My rates","Meine Tarife","Le mie tariffe"],["Suisse","Switzerland","Schweiz","Svizzera"],["France","France","Frankreich","Francia"],
+["Journée","Day","Tag","Giornata"],["Semaine (5 jours)","Week (5 days)","Woche (5 Tage)","Settimana (5 giorni)"],["Mois (20 jours)","Month (20 days)","Monat (20 Tage)","Mese (20 giorni)"],
+["Maintenance mensuelle (2 jours)","Monthly maintenance (2 days)","Monatliche Wartung (2 Tage)","Manutenzione mensile (2 giorni)"],["Formation (par jour)","Training (per day)","Schulung (pro Tag)","Formazione (al giorno)"],
+["Tarifs indicatifs à partir de, hors taxes. Un devis précis est établi selon la durée, le lieu et la complexité.","Indicative starting rates, excluding VAT. A precise quote depends on duration, location and complexity.","Richtpreise ab, ohne MwSt. Ein genaues Angebot richtet sich nach Dauer, Ort und Komplexität.","Tariffe indicative a partire da, IVA esclusa. Un preventivo preciso dipende da durata, sede e complessità."],
+["Demander un devis","Request a quote","Offerte anfordern","Richiedi un preventivo"],
+["CAROLINE BIDAULT · PORTFOLIO PROFESSIONNEL ·","CAROLINE BIDAULT · PROFESSIONAL PORTFOLIO ·","CAROLINE BIDAULT · PROFESSIONELLES PORTFOLIO ·","CAROLINE BIDAULT · PORTFOLIO PROFESSIONALE ·"],
+["Caroline Bidault — Développement logiciel, applications métier, données et systèmes d'information.","Caroline Bidault — Software development, business applications, data and information systems.","Caroline Bidault — Softwareentwicklung, Fachanwendungen, Daten und Informationssysteme.","Caroline Bidault — Sviluppo software, applicazioni gestionali, dati e sistemi informativi."]
+];
+const LANGS=['fr','en','de','it'],M=new Map(I18N.map(r=>[r[0],r]));let cur='fr';
+function tr(s){if(cur==='fr')return s;const r=M.get(s);return r?r[LANGS.indexOf(cur)]:s}
+function applyLang(l){
+ cur=l;const i=LANGS.indexOf(l);document.documentElement.lang=l;
+ const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
+ while(n=w.nextNode()){
+  const p=n.parentElement;if(!p||p.closest('script,#demoRows,#demoCount'))continue;
+  if(n.__fr===undefined)n.__fr=n.nodeValue;const k=n.__fr.trim();if(!k)continue;
+  const r=M.get(k);if(!r)continue;n.nodeValue=l==='fr'?n.__fr:n.__fr.replace(k,()=>r[i]);
+ }
+ document.querySelectorAll('[placeholder],[aria-label]').forEach(e=>{
+  if(e.id==='lang')return;if(!e.__a)e.__a={p:e.getAttribute('placeholder'),a:e.getAttribute('aria-label')};
+  [['placeholder','p'],['aria-label','a']].forEach(([at,key])=>{const v=e.__a[key];if(v==null)return;const r=M.get(v);e.setAttribute(at,(l==='fr'||!r)?v:r[i])});
+ });
+ const md=document.querySelector('meta[name=description]');if(!md.__fr)md.__fr=md.content;const r=M.get(md.__fr);md.content=(l==='fr'||!r)?md.__fr:r[i];
+ document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+ if(typeof render==='function')render();if(window.statsRedraw)statsRedraw();
+}
+function detectLang(){
+ const q=new URLSearchParams(location.search).get('lang');if(LANGS.includes(q))return q;
+ try{const s=localStorage.getItem('lang');if(LANGS.includes(s))return s}catch(e){}
+ for(const x of (navigator.languages||[navigator.language])){const c=(x||'').slice(0,2).toLowerCase();if(LANGS.includes(c))return c}
+ return 'en';
+}
+</script>
+<script>
+// Menu mobile
+const menu=document.querySelector('.menu'),nav=document.querySelector('.navlinks');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
+// Apparition progressive des sections au défilement
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+// Compteur animé
+const counter=document.querySelector('.count');const countObserver=new IntersectionObserver(entries=>{if(entries[0].isIntersecting){let n=0;const target=Number(counter.dataset.target),step=()=>{n=Math.min(target,n+1);counter.textContent=n;if(n<target)setTimeout(step,45)};step();countObserver.disconnect()}},{threshold:.7});countObserver.observe(counter);
+// Tableau interactif : jeu de données fictif
+const rows=[['Automate zone C','Automatisme','Terminé','03/11/2026'],['Chaudière secteur B','Chauffage','En cours','04/11/2026'],['Pompe primaire A','Chauffage','Urgent','05/11/2026'],['Régulation zone E','Automatisme','Urgent','01/11/2026'],['Ventilation bâtiment D','Ventilation','En cours','02/11/2026']];
+const tbody=document.getElementById('demoRows'),search=document.getElementById('search'),filter=document.getElementById('statusFilter');function render(){const q=search.value.toLocaleLowerCase('fr'),s=filter.value;const found=rows.filter(r=>(r.map(tr).join(' ').toLocaleLowerCase('fr').includes(q))&&(s==='all'||r[2]===s));tbody.innerHTML=found.map(r=>`<tr><td>${tr(r[0])}</td><td>${tr(r[1])}</td><td><span class="status ${r[2]==='Urgent'?'urgent':r[2]==='En cours'?'warn':''}">${tr(r[2])}</span></td><td>${r[3]}</td></tr>`).join('');document.getElementById('demoCount').textContent=`${found.length} ${tr('élément(s) affiché(s) · Grille interactive · Données fictives')}`;}search.addEventListener('input',render);filter.addEventListener('change',render);render();document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+<script>
+(function(){
+const g=id=>document.getElementById(id),RMo=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function cv(c){const d=devicePixelRatio||1,r=c.getBoundingClientRect();c.width=r.width*d;c.height=r.height*d;const x=c.getContext('2d');x.scale(d,d);return{x,w:r.width,h:r.height}}
+const c1=g('sc1'),c2=g('sc2');let A,B,prog=1,vis=false,once=false,kdone=false;
+const kS=[.9,1.9,2.8,3.5,3.4,3.1,2.5,1.5,.5],dS=[95,200,360,480,500,390,330,190,105],mi=[8,9,10,11,0,1,2,3,4];
+const mon=i=>new Date(2026,mi[i],1).toLocaleString(cur,{month:'short'}).replace('.','');
+function draw1(){const{x,w,h}=A,n=9,pl=40,pr=44,pt=12,pb=28,cw=(w-pl-pr)/n,e=1-Math.pow(1-Math.min(prog,1),3);
+ x.clearRect(0,0,w,h);x.font='13px Inter,system-ui,sans-serif';x.strokeStyle='#dce7e9';x.fillStyle='#657984';
+ for(let i=0;i<=4;i++){const y=pt+(h-pt-pb)*i/4;x.beginPath();x.moveTo(pl,y);x.lineTo(w-pr,y);x.stroke();x.textAlign='right';x.fillText(4-i,pl-8,y+4);x.textAlign='left';x.fillText(500-i*125,w-pr+8,y+4)}
+ x.textAlign='center';
+ for(let i=0;i<n;i++){const bh=(h-pt-pb)*kS[i]/4*e;x.fillStyle='#56c7b5';x.fillRect(pl+i*cw+cw*.2,h-pb-bh,cw*.6,bh);x.fillStyle='#657984';x.fillText(mon(i),pl+i*cw+cw/2,h-8)}
+ x.beginPath();for(let i=0;i<n;i++){const px=pl+i*cw+cw/2,py=h-pb-(h-pt-pb)*dS[i]/500*e;i?x.lineTo(px,py):x.moveTo(px,py)}
+ x.strokeStyle='#e8b86b';x.lineWidth=3;x.stroke();x.lineWidth=1}
+const F=[t=>78+7*Math.sin(t*.9)+2*Math.sin(t*2.7),t=>58+5*Math.sin(t*.9-.8)+1.8*Math.sin(t*2.1+1),t=>6+4*Math.sin(t*.35)+.8*Math.sin(t*1.7)],C=['#078f91','#e8b86b','#102f3d'];
+function draw2(ts){const t0=ts/1000*.8,{x,w,h}=B,pl=34,pt=12,pb=14;x.clearRect(0,0,w,h);x.font='13px Inter,system-ui,sans-serif';x.fillStyle='#657984';x.strokeStyle='#dce7e9';x.textAlign='right';
+ for(let i=0;i<=4;i++){const y=pt+(h-pt-pb)*i/4;x.beginPath();x.moveTo(pl,y);x.lineTo(w,y);x.stroke();x.fillText(100-i*25,pl-8,y+4)}
+ F.forEach((f,k)=>{x.beginPath();for(let px=pl;px<=w;px+=4){const v=f(t0+(px-pl)/(w-pl)*7),y=pt+(h-pt-pb)*(1-v/100);px==pl?x.moveTo(px,y):x.lineTo(px,y)}x.strokeStyle=C[k];x.lineWidth=2.6;x.stroke();x.lineWidth=1;
+  const v=f(t0+7),y=pt+(h-pt-pb)*(1-v/100);x.beginPath();x.arc(w-3,y,4,0,7);x.fillStyle=C[k];x.fill();g('s'+(k+1)).textContent=v.toFixed(1)+' °C'})}
+function loop(ts){if(vis)draw2(ts);if(!RMo)requestAnimationFrame(loop)}
+function kpi(e){document.querySelectorAll('.kv').forEach(el=>{const v=+el.dataset.v,d=+el.dataset.d,u=el.dataset.u,fmt=n=>n.toLocaleString(cur,{minimumFractionDigits:d,maximumFractionDigits:d})+u;
+ if(e>=1||RMo){el.textContent=fmt(v)}else el.textContent=fmt(v*e)})}
+function anim(){const t0=performance.now();(function s(ts){const e=Math.min((ts-t0)/1300,1);prog=e;draw1();kpi(1-Math.pow(1-e,3));if(e<1)requestAnimationFrame(s);else kdone=true})(t0)}
+window.statsRedraw=()=>{if(!c1)return;A=cv(c1);B=cv(c2);draw1();draw2(performance.now());if(kdone)kpi(1)};
+statsRedraw();prog=0;draw1();
+new IntersectionObserver(es=>{vis=es[0].isIntersecting;if(vis&&!once){once=true;RMo?(prog=1,draw1(),kpi(1),kdone=true):anim()}},{threshold:.2}).observe(g('statistiques'));
+addEventListener('resize',()=>statsRedraw());
+requestAnimationFrame(loop);
+})();
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>{applyLang(b.dataset.l);try{localStorage.setItem('lang',b.dataset.l)}catch(x){}}));
+applyLang(detectLang());
+</script></body></html>
