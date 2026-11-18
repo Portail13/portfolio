@@ -115,7 +115,7 @@ section{padding:82px 0}.section-head{max-width:650px;margin-bottom:34px}.kicker{
 </div><p class="reveal" style="margin-top:24px;color:var(--muted);font-size:13.5px">Formation : DUT Informatique — Génie logiciel, Université Sorbonne Paris Nord. Langues : français natif, anglais bon niveau, allemand scolaire.</p></div></section>
 <section id="moi"><div class="wrap"><div class="section-head reveal"><div class="kicker">06 / Moi</div><h2>Qui je suis, et ce que je propose.</h2></div>
 <div class="me reveal"><img src="photo.png" alt="Développeuse de dos devant plusieurs écrans de code" loading="lazy"><div>
-<p>Développeuse depuis plus de 20 ans, autonome et orientée solutions. Je travaille sur Genève, et je suis disponible en CDI, en CDD ou en mission.</p>
+<p id="aboutText" data-fr="Développeuse depuis plus de 20 ans, autonome et orientée solutions. Je travaille sur Genève, et je suis disponible en CDI, en CDD ou en mission.">Développeuse depuis plus de 20 ans, autonome et orientée solutions. Je travaille sur Genève, et je suis disponible en CDI, en CDD ou en mission.</p>
 </div></div></div></section>
 
 <section class="contact" id="contact"><div class="wrap"><div class="contact-panel reveal"><div><div class="kicker" style="color:#80d8ca">Contact</div><h2>Parlons de votre prochain projet.</h2><p>Développement, évolution applicative, automatisation ou intégration de systèmes.</p></div><a class="contact-email" href="mailto:cmlbidault@proton.me">cmlbidault@proton.me ↗</a></div></div></section>
@@ -261,6 +261,13 @@ function applyLang(l){
   const p=n.parentElement;if(!p||p.closest('script,#demoRows,#demoCount'))continue;
   if(n.__fr===undefined)n.__fr=n.nodeValue;const k=n.__fr.trim();if(!k)continue;
   const r=M.get(k);if(!r)continue;n.nodeValue=l==='fr'?n.__fr:n.__fr.replace(k,()=>r[i]);
+ }
+ // Traduction explicite de la présentation personnelle
+ const about=document.getElementById('aboutText');
+ if(about){
+  const original=about.dataset.fr;
+  const row=M.get(original);
+  about.textContent=(l==='fr'||!row)?original:row[i];
  }
  document.querySelectorAll('[placeholder],[aria-label],[alt]').forEach(e=>{
   if(!e.__a)e.__a={placeholder:e.getAttribute('placeholder'),'aria-label':e.getAttribute('aria-label'),alt:e.getAttribute('alt')};
