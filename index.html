@@ -136,21 +136,7 @@ section{padding:82px 0}.section-head{max-width:650px;margin-bottom:34px}.kicker{
 <ul id="pList"></ul>
 <div class="pact"><a class="button primary" id="pCta" href="mailto:cmlbidault@proton.me?subject=Un%20probl%C3%A8me%20avec%20mon%20ordinateur">Me contacter</a><button class="xbtn" id="pClose" type="button">Fermer</button></div>
 </dialog>
-<script>
-(function(){
-const T={
-fr:{b:"STD",tip:"Un problème avec l'ordinateur ? Je suis là pour trouver des solutions.",t:"Plus besoin de casser l'ordinateur avec un marteau",sub:"Ni de le jeter à la poubelle. On trouve une solution plus douce.",i:"Mon métier, expliqué sans jargon :",l:["Je fabrique des programmes sur mesure : ce que vous faites à la main chaque semaine, l'ordinateur le fait tout seul.","Je rassemble vos informations éparpillées (fichiers, tableaux, logiciels) au même endroit.","Je les transforme en graphiques et en alertes faciles à lire : vous voyez tout de suite ce qui ne va pas.","Quand ça plante, je cherche pourquoi, je répare, et je vous explique simplement."],x:"Fermer",c:"Me contacter",a:"Un ordinateur content, un marteau et une poubelle barrés"},
-en:{b:"STD",tip:"Computer trouble? I'm here to find solutions.",t:"No need to hit the computer with a hammer",sub:"Or throw it in the bin. Let's find a gentler fix.",i:"My job, explained without jargon:",l:["I build custom programs: whatever you do by hand every week, the computer does by itself.","I gather your scattered information (files, spreadsheets, software) in one place.","I turn it into easy-to-read charts and alerts, so you see at once what's wrong.","When something crashes, I find out why, fix it and explain it in simple words."],x:"Close",c:"Contact me",a:"A happy computer, with a hammer and a bin crossed out"},
-de:{b:"STD",tip:"Probleme mit dem Computer? Ich finde Lösungen.",t:"Kein Hammer mehr nötig für den Computer",sub:"Und er muss auch nicht in den Müll. Es geht sanfter.",i:"Mein Beruf, ohne Fachchinesisch erklärt:",l:["Ich baue Programme nach Maß: Was Sie jede Woche von Hand erledigen, macht der Computer von allein.","Ich bringe Ihre verstreuten Informationen (Dateien, Tabellen, Software) an einem Ort zusammen.","Ich mache daraus verständliche Diagramme und Warnungen, damit Sie sofort sehen, was nicht stimmt.","Wenn etwas abstürzt, suche ich die Ursache, behebe sie und erkläre sie einfach."],x:"Schließen",c:"Kontakt aufnehmen",a:"Ein zufriedener Computer, Hammer und Mülleimer durchgestrichen"},
-it:{b:"STD",tip:"Problemi con il computer? Sono qui per trovare soluzioni.",t:"Non serve più il martello per il computer",sub:"E non serve nemmeno buttarlo via. C'è una soluzione più gentile.",i:"Il mio lavoro, spiegato senza paroloni:",l:["Creo programmi su misura: quello che fate a mano ogni settimana, lo fa il computer da solo.","Riunisco in un unico posto le vostre informazioni sparse (file, tabelle, programmi).","Le trasformo in grafici e avvisi facili da leggere, così vedete subito cosa non va.","Quando qualcosa si blocca, scopro perché, lo ripari e ve lo spiego in parole semplici."],x:"Chiudi",c:"Contattami",a:"Un computer felice, martello e cestino barrati"}};
-const $=id=>document.getElementById(id),d=$('plain'),b=$('plainBtn');
-window.plainRedraw=function(){const t=T[cur];b.querySelector('.pb-t').textContent=t.b;b.dataset.tip=t.tip;b.setAttribute('aria-label',t.b+' : '+t.tip);
- $('pTitle').textContent=t.t;$('pSub').textContent=t.sub;$('pTip').textContent=t.tip;$('pIntro').textContent=t.i;$('pList').innerHTML=t.l.map(x=>'<li>'+x+'</li>').join('');$('pClose').textContent=t.x;$('pCta').textContent=t.c;$('pSvg').setAttribute('aria-label',t.a)};
-b.addEventListener('click',()=>{d.showModal?d.showModal():d.setAttribute('open','')});
-$('pClose').addEventListener('click',()=>d.close());
-d.addEventListener('click',e=>{if(e.target===d)d.close()});
-})();
-</script>
+
 <script>
 const I18N=[
 ["Software · Data · Systems","Software · Data · Systems","Software · Daten · Systeme","Software · Dati · Sistemi"],
